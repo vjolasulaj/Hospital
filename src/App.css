@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color:#edf5ff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Libre Baskerville', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+  display: flex;
+  flex-direction: row;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  margin-left: 90px;
+  padding: 10px;
+  width: calc(100% - 10px);
+}
+
+
+.home-container img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.home-text {
+  position: absolute;
+  top: 80px;
+  width: 500px;
+  left: 20px;
+  color: rgb(5, 4, 92);
+  font-style: italic;
+  font-size: 2em;
+}
+
+.containers {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 320px;
+  left: 20px;
+  gap: 20px;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 70px;
+  align-items: center;
+  background-color: rgb(208, 217, 248);
+  border-radius: 8px;
+  border: 2px solid rgb(95, 110, 248);
+}
+
+.desc{
+  position: absolute;
+    top: 187px;
+    width: 400px;
+    margin-left: 20px;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.text {
+  width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.text h4 {
+  font-size: 16px;
+  color: rgb(5, 5, 148);
+  font-weight: bolder;
+  margin-top: 7px;
+}
+
+.text p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text a {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  font-style: oblique;
+}
+
+
+
+/* Modal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 500px;
+  max-width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.modal-body {
+  margin: 15px 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+}
+
+.input-admin{
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  height: 30px;
+}
+

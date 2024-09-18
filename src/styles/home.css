@@ -1,0 +1,363 @@
+.container{
+    margin: 30px 40px 40px 30px;
+}
+
+.nav {
+    justify-content: space-between;
+    height: 50px;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 30px 0px 30px;
+}
+
+.inner-nav li {
+    list-style: none;
+    font-size: 16px;
+    color: #0c1485;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.inner-nav a{
+    text-decoration: none;
+}
+
+.inner-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.login-div button {
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    background: #121FCF;
+    background: linear-gradient(to right, #121FCF 24%, #3048FF 50%, #1261CF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landing-page{
+    width: 100%;
+    height: 300px;
+    background-color: #0c1485;
+    border-radius: 30px;
+    margin: 70px auto;
+}
+
+.landing-text{
+    color: white;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 100px;
+}
+
+.landing-text h5{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.landing-text h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    width: 400px;
+    color: #98c3ff;
+    font-weight: 600;
+}
+
+.landing-container img {
+    position: absolute;
+    width: 530px;
+    top: 67px;
+    right: 180px;
+}
+
+
+.about-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.image-about img{
+    width: 530px;
+    border-radius: 40px;
+    margin-bottom: 30px;
+}
+
+.about-us{
+    /* margin: 70px 90px 30px 90px; */
+    width: 1130px;
+    margin: 0px auto;
+    border-radius: 30px;
+    background-color: rgb(210, 217, 253);
+}
+
+.about-us h2{
+    color: #202899;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 75px;
+}
+
+.about-text h3{
+    font-size: 25px;
+    color: #1261CF;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+}
+
+.about-text h5{
+    color: #272727;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.our-services{
+    width: 1130px;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: #ebecec;
+    border-radius: 30px;
+    padding-bottom: 20px;
+}
+
+.inner-services h2{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+    color:#121FCF;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.services-text1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.services-text1 h3{
+    font-size: 30px;
+    color: black;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+.services-text1 h4{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+}
+
+.services-box{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-top: 40px;
+}
+
+.services{
+    width: 430px;
+    background-color: white;
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#blue-service{
+    background-color: #1261CF;
+}
+
+#blue-service h3{
+    font-size: 20px;
+    color: white;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+#blue-service p{
+    font-size: 14px;
+    color: white;
+    width: 300px;
+
+}
+
+.services-text2{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 60px;
+    margin-left: 15px;
+}
+
+.services-text2 h3{
+    font-size: 20px;
+    color: #0c1485;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+.services-text2 p{
+    font-size: 14px;
+    width: 300px;
+}
+
+.view-all{
+    width: 180px;
+    height: 40px;
+    border: 2px solid #121FCF;
+    border-radius: 20px;
+    background-color: #1261CF;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.contact-section{
+    display: flex;
+    flex-direction: row;
+    width: 1130px;
+    margin: 0 auto;
+    background-color: #ebecec;
+    border-radius: 30px;
+    margin-top: 60px;
+    gap: 180px;
+    padding-bottom: 30px;
+}
+
+.contact-info{
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+.contact-info img{
+    border-radius: 30px;
+}
+
+.contact-info h3{
+    font-size: 22px;
+    color: #121FCF;
+    font-weight: 600;
+    width: 300px;
+    margin-top: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+  width: 300px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  margin: 0 auto;
+  border: 1px solid rgb(69, 69, 70);
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.inputs::placeholder{
+    font-size: 12px;
+    color: rgb(122, 122, 122);
+}
+
+label{
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.send{
+    width: 180px;
+    height: 40px;
+    border: 2px solid #121FCF;
+    border-radius: 20px;
+    background-color: #1261CF;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer{
+    width: 100%;
+    background-color: #0c1485;
+    height: 230px;
+    margin-top: 50px;
+}
+
+.footer-inner{
+    text-align: center;
+    padding-top: 25px;
+}
+
+.footer-logo{
+    color: white;
+    font-size: 40px;
+}
+
+.footer-inner h4{
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.footer-bottom{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 12px;
+    color: white;
+}
+
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

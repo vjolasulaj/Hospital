@@ -1,0 +1,46 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Make sure overlay has high z-index */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1000; /* Modal content should be above overlay */
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.modal-actions {
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  margin: 0 10px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background-color: red;
+  color: white;
+}
+
+.modal-actions button:last-child {
+  background-color: gray;
+  color: white;
+}

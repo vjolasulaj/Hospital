@@ -1,0 +1,13 @@
+.update-btn{
+    display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 35px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgb(211, 220, 250);
+  border: 2px solid blue;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+}

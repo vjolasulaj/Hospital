@@ -1,0 +1,33 @@
+.admin-container img{
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.admin-container .admin-text1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.admin-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.admin-info h2{
+    font-size: 25px;
+}
+
+.form-change{
+    display: flex;
+    flex-direction: column; 
+    margin-right: 860px;
+}
+
+.change{
+    margin-left: 38px;
+    font-weight: 500;
+    font-size: 18px;
+}
