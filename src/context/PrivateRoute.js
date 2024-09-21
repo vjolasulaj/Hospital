@@ -1,17 +1,20 @@
 
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem('authToken');
-  const userRole = localStorage.getItem('userRole');
-  const location = useLocation();
+const PrivateRoute = ({ children, requiredRole = 'admin' }) => {
+  const storedUser = localStorage.getItem("user");
+  const user = storedUser ? JSON.parse(storedUser) : null;
 
-  if (!isAuthenticated || userRole !== 'admin') {
-    return <Navigate to="/admin-login" state={{ from: location }} replace />;
+  console.log("ProtectedRoute: Checking user role", user?.role);
+
+  if (!user || user.role !== requiredRole) {
+    console.log("ProtectedRoute: Unauthorized access, redirecting to login");
+    return <Navigate to="/admin-login" replace />;
   }
 
   return children;
 };
+
 
 export default PrivateRoute;

@@ -16,7 +16,8 @@
   padding: 20px;
   border-radius: 20px;
   text-align: center;
-  z-index: 1000; /* Modal content should be above overlay */
+  z-index: 1000;
+  width: 400px;
 }
 
 h3 {

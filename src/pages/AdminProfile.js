@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/admin.css";
+import Sidebar from "../components/Sidebar";
 
 const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -24,27 +25,42 @@ const ChangePassword = () => {
   };
 
   return (
-    <div className="admin-page">
-      <div className="admin-container">
-        <h2 className="admin-text1">Admin Profile</h2>
-        <img src="adminn.png"></img>
+    <>
+      <Sidebar />
+      <div className="admin-page">
+        <div className="admin-container">
+          <h2 className="admin-text1">Admin Profile</h2>
+          <img src="adminn.png" alt="Admin Profile" />
+        </div>
+        <div className="admin-info">
+          <h2>Admin Information:</h2>
+          <h4>Name: Vjola Sulaj</h4>
+          <h4>Profile: Admin</h4>
+          <h4>Gender: Female</h4>
+          <h4>Created: 12/09/2024</h4>
+          <h4>Email Address: admin@test1.com</h4>
+        </div>
+        {/* <form onSubmit={handlePasswordChange} className="form-change">
+          <h3 className="change">Change password:</h3>
+          <input
+            type="password"
+            placeholder="Current Password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="New Password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Change Password</button>
+        </form> */}
+        {message && <p>{message}</p>}
       </div>
-      <div className="admin-info">
-        <h2>Admin Information:</h2>
-        <h4>Name: Vjola Sulaj</h4>
-        <h4>Profile: Admin</h4>
-        <h4>Gender: Female</h4>
-        <h4>Created: 12/09/2024</h4>
-        <h4>Email Address: admin@test1.com</h4>
-      </div>
-      <form onSubmit={handlePasswordChange} className="form-change">
-        <h3 className="change">Change password:</h3>
-        <input type="password" placeholder="Current Password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} required />
-        <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
-        <button type="submit">Change Password</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+    </>
   );
 };
 

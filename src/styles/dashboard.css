@@ -9,6 +9,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.containers{
+    margin: 19px 15px 41px 85px;
+}
 .text-container {
     display: flex;
     flex-direction: column;

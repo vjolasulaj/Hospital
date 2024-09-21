@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import Sidebar from "../components/Sidebar";
 
 const Appointment = () => {
   const [appointment, setAppointment] = useState([]);
@@ -42,7 +43,9 @@ const Appointment = () => {
   };
 
   return (
-    <div className="container my-4">
+    <>
+    <Sidebar />
+     <div className="container my-4" style={{"marginLeft":"100px"}}>
       <h2 className="text-center mb-4">Appointments Table</h2>
       <div className="row mb-3">
         <div className="col">
@@ -94,6 +97,10 @@ const Appointment = () => {
         </tbody>
       </table>
     </div>
+    
+    
+    </>
+   
   );
 };
 

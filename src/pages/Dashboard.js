@@ -1,60 +1,85 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"; // Updated to useNavigate for React Router v6
-import { AdminContext } from "../context/AdminContext";
+import { useNavigate } from "react-router-dom"; 
 import "../styles/dashboard.css";
 import Statistics from "../components/Statistics";
 import { AppointmentGraph } from "../components/AppointmentGraph";
 import { PatientGraph } from "../components/PatientsGraph";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
-  const [userName, setUserName] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { user } = useContext(AdminContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const verifyToken = async () => {
+    const fetchData = async () => {
+      console.log("Dashboard: Starting fetchData");
       const token = localStorage.getItem("token");
+      console.log("Dashboard: Retrieved token from localStorage:", token);
 
       if (!token) {
-        navigate("/login")
+        console.log("Dashboard: No token found, redirecting to login");
+        navigate("/login");
         return;
       }
 
-      try {
-        const response = await axios.get("http://localhost:5000/api/verify-token", {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+      const storedUser = localStorage.getItem("user");
+      console.log("Dashboard: Stored user:", storedUser);
 
-        if (response.data.success) {
-          const storedUser = localStorage.getItem("user");
-          if (storedUser) {
-            const user = JSON.parse(storedUser);
-            setUserName(user.name);
-          }
-          setIsAuthenticated(true);
-        } else {
-          navigate("/login");
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        if (user.role !== "admin") {
+          console.log("Dashboard: User is not an admin, redirecting");
+          navigate("/unauthorized");
+          return;
         }
-      } catch (error) {
-        console.error("Token verification failed:", error);
+        setUserName(user.name);
+        setIsAdmin(true);
+        console.log("Dashboard: Admin user confirmed:", user.name);
+      } else {
+        console.log("Dashboard: No user info found, redirecting to login");
         navigate("/login");
+        return;
+      }
+
+      console.log("Dashboard: Admin confirmed, proceeding to dashboard request");
+      try {
+        const response = await axios.get("http://localhost:5000/verify/api/dashboard", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log("Dashboard: API request successful", response.data);
+
+        setIsAuthenticated(true);
+        console.log("Dashboard: Is authenticated set to true");
+      } catch (error) {
+        console.error("Dashboard: Error in request:", error);
+        if (error.response && error.response.status === 401) {
+          console.log("Dashboard: 401 error, removing token and redirecting to login");
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          navigate("/login");
+        } else {
+          console.error("Dashboard: Request failed:", error);
+        }
       } finally {
         setIsLoading(false);
+        console.log("Dashboard: Loading set to false");
       }
     };
 
-    verifyToken();
+    fetchData();
   }, [navigate]);
 
-  if (isLoading) {
-    return <p>Loading...</p>;
+  if (!isAuthenticated || !isAdmin) {
+    return null;
   }
 
   return (
-    <div className="container">
+    <div className="containers">
+      <Sidebar />
       <div className="welcome-container">
         <div className="text-container">
           <h3>Welcome back {userName} &#128075;</h3>
@@ -66,11 +91,10 @@ const Dashboard = () => {
         </div>
       </div>
       <Statistics />
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", gap: "100px" }}>
         <AppointmentGraph />
         <PatientGraph />
       </div>
-      {/* <Services /> */}
     </div>
   );
 };
